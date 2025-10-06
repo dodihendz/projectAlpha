@@ -5,10 +5,10 @@
 @foreach ($posts as $pst)
 <article class=" mb-5 border-bottom pb-3">
     <h2>
-        <a href="/posts/{{$pst['slug']}}">Judul {{ $pst["title"] }}</a>
+        <a href="/posts/{{$pst->slug}}"> {{ $pst->title }}</a>
     </h2>
-    <h5>By. {{ $pst["author"] }}</h5>
-    <p>{{ $pst["body"] }}</p>
+    <h5>By. {{ $pst->author }}</h5>
+    <p>{{ $pst->excerpt }}</p>
 </article>
 @endforeach
 @endsection
