@@ -8,7 +8,7 @@
     <h2>
         <a href="/posts/{{$pst->slug}}"> {{ $pst->title }}</a>
     </h2>
-    <h5>By. {{ $pst->author }}</h5>
+    <h5>By. {{ $pst->author->username }}</h5>
     <p>{{ $pst->excerpt }}</p>
 </article>
 @endforeach
