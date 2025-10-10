@@ -1,7 +1,7 @@
 {{-- @dd($posts)  sama seperti var_dum --}}
 @extends('layouts.main')
-
 @section('container')
+<h1 class="mb-5">{{ $title }}</h1>
 @foreach ($posts as $pst)
 <article class=" mb-5 border-bottom pb-3">
     <h2>
