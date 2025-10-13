@@ -40,8 +40,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Category::create([
-            "name" => "Design",
-            "slug" => "des-02"
+            "name" => "web-design",
+            "slug" => "desweb-02"
         ]);
 
         Category::create([
