@@ -19,7 +19,8 @@
                         name="name"
                         class="form-control rounded-top @error('name') is-invalid @enderror"
                         id="name"
-                        placeholder="Name" />
+                        placeholder="Name"
+                        value="{{ old('name') }}" required />
                     <label for="name">Name</label>
                     @error('name')
                     <div class="invalid-feedback">
@@ -33,7 +34,8 @@
                         name="username"
                         class="form-control @error('username') is-invalid @enderror"
                         id="username"
-                        placeholder="UserName" />
+                        placeholder="UserName"
+                        value="{{ old('username') }}" required />
                     <label for="username">UserName</label>
                     @error('username')
                     <div class="invalid-feedback">
@@ -45,8 +47,11 @@
                     <input
                         type="email"
                         class="form-control @error('email') is-invalid @enderror"
+                        name="email"
                         id="email"
-                        placeholder="name@example.com" />
+                        placeholder="name@example.com"
+                        value="{{ old('email') }}"
+                        required />
                     <label for="email">Email address</label>
                     @error('email')
                     <div class="invalid-feedback">
@@ -58,8 +63,10 @@
                     <input
                         type="password"
                         class="form-control rounded-bottom @error('password') is-invalid @enderror"
+                        name="password"
                         id="password"
-                        placeholder="Password" />
+                        placeholder="Password"
+                        required />
                     <label for="password">Password</label>
                     @error('password')
                     <div class="invalid-feedback">
