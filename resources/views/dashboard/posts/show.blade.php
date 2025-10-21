@@ -8,14 +8,18 @@
                 <span class=" bi bi-arrow-left-circle"></span>
                 back to all my posts
             </a>
-            <a href="" class="btn btn-warning btn-sm">
+            <a href="/dashboard/posts/{{ $post->slug }}/edit" class="btn btn-warning btn-sm">
                 <span class=" bi bi-pencil-square"></span>
                 Edit
             </a>
-            <a href="" class="btn btn-danger btn-sm">
-                <span class="bi bi-x-circle"></span>
-                Delete
-            </a>
+            <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
+                @method('delete')
+                @csrf
+                <button type="submit" class="btn btn-danger btn-sm " onclick="return confirm('Are you sure?')">
+                    <span class="bi bi-x-circle align-text-bottom"></span>
+                    Delete
+                </button>
+            </form>
             <!-- <p>{{ $post->body }}</p> -->
             <br>
             <img src="https://source.unsplash.com/1200x400?{{ $post->category->name }}" class="card-img-top img-fluid mt-3"
