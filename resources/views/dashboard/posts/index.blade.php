@@ -27,12 +27,16 @@
                 <td><a href="/dashboard/posts/{{ $post->slug }}" class="btn btn-info btn-sm">
                         <span class=" bi bi-eye align-text-bottom"></span>
                     </a>
-                    <a href="/dashboard/posts/{{ $post->id }}" class="btn btn-warning btn-sm">
+                    <a href="/dashboard/posts/{{ $post->slug }}/edit" class="btn btn-warning btn-sm">
                         <span class=" bi bi-pencil-square align-text-bottom"></span>
                     </a>
-                    <a href="/dashboard/posts/{{ $post->id }}" class="btn btn-danger btn-sm">
-                        <span class="bi bi-x-circle align-text-bottom"></span>
-                    </a>
+                    <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
+                        @method('delete')
+                        @csrf
+                        <button type="submit" class="btn btn-danger btn-sm border-0" onclick="return confirm('Are you sure?')">
+                            <span class="bi bi-x-circle align-text-bottom"></span>
+                        </button>
+                    </form>
                 </td>
             </tr>
             @endforeach
