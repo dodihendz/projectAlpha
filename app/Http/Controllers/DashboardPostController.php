@@ -40,11 +40,15 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request); dd itu debug selain var_dumb
         // return $request;
+        // return $request->file('image')->store('post-images'); // untuk menyimpan gambar
+
         $validatedData = $request->validate([
             'title' => 'required|max:255',
             'slug' => 'required|unique:posts',
             'category_id' => 'required',
+            'image' => 'image|file|max:1024',
             'body' => 'required'
         ]);
         //$validatedData['user_id'] = auth()->user()->id;
