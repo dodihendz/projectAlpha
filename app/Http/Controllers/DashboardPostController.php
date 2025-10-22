@@ -52,6 +52,11 @@ class DashboardPostController extends Controller
             'body' => 'required'
         ]);
         //$validatedData['user_id'] = auth()->user()->id;
+
+        if ($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('post-images');
+        }
+
         $validatedData['user_id'] = Auth::id();
         $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
 
