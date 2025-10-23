@@ -22,7 +22,6 @@
                  <li class="nav-item">
                      <a
                          class="nav-link d-flex align-items-center gap-2 {{Request::is('dashboard')? 'active': ''}}"
-                         aria-current="page"
                          href="/dashboard">
                          <svg class="bi" aria-hidden="true">
                              <use xlink:href="#house-fill"></use>
@@ -56,5 +55,19 @@
                      </li>
                  </ul>
          </div>
+         <hr class="my-3" />
+         <h7 class="nav flex-column d-flex justify-content-between align-items-center px-3 mt-4 mb-1">
+             <span class="nav-link">
+                 Administrator
+             </span>
+         </h7>
+         <ul class="nav flex-column mb-auto">
+             <li class="nav-item">
+                 <a class="nav-link d-flex align-items-center gap-2 {{Request::is('dashboard/categories*')? 'active': ''}}" href="/dashboard/categories">
+                     <i class="bi bi-columns-gap text-dark"></i>
+                     Posts Categories
+                 </a>
+             </li>
+         </ul>
      </div>
  </div>
